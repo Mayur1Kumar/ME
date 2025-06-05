@@ -3,98 +3,299 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>ME</title>
     <style>
+      /* Reset and base styles */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        caret-color: transparent !important;
       }
 
+      /* Body and typography */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: black;
-        color: white;
+        background-color: #000000; /* Pure black background */
+        color: #ffffff; /* Pure white text */
         text-align: center;
+        line-height: 1.6;
       }
 
+      /* Header styles */
       header {
-        background-color: black;
+        background-color: #000000; /* Pure black background */
         display: flex;
         justify-content: center;
         align-items: center;
-        border-bottom: 1px solid lightgrey;
+        border-bottom: 1px solid #444444; /* Dark grey border */
+        padding: 0.8rem 0;
       }
 
+      /* Logo image */
       .logo img {
-        height: 50px;
+        height: 48px;
         width: auto;
       }
 
+      /* INTRO SECTION */
       .intro {
-        padding: 3rem 1rem;
+        padding: 4rem 1rem;
       }
 
+      /* Profile picture styling */
       .profile-pic {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
         border-radius: 50%;
-        border: 3px solid lightgrey;
+        border: 3px solid #cccccc; /* Light grey border */
         object-fit: cover;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* subtle white glow */
+        margin-bottom: 1.5rem;
       }
 
+      /* Main heading */
       h1 {
-        font-size: 2.5rem;
-        margin-top: 1rem;
+        font-size: 2.9rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #ffffff; /* Pure white */
+        margin-bottom: 0.7rem;
       }
 
+      /* Subtitle / Title */
       .title {
-        font-size: 1.2rem;
-        color: #aaa;
-        margin-top: 0.5rem;
+        font-size: 1.25rem;
+        color: #cccccc; /* Light grey text */
+        font-weight: 500;
+        letter-spacing: 1px;
       }
 
+      /* CARDS CONTAINER - Projects or skills cards */
       .cards-container {
         display: flex;
         justify-content: center;
-        gap: 1rem;
-        padding: 1rem 1rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
+        padding: 2rem 1rem;
+        max-width: 1000px;
+        margin: 0 auto;
       }
 
+      /* Individual card styling */
       .card {
-        background-color: #1a1a1a;
-        width: 300px;
-        padding: 1rem 1.5rem;
-        border-left: 5px solid lightgrey;
-        transition: background 0.3s;
-        text-align: left;
+        background-color: #111111; /* Very dark grey background */
+        width: 320px;
+        padding: 1.5rem 2rem;
+        border-left: 6px solid #999999; /* Medium grey border */
+        transition: background 0.3s, border-color 0.3s;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.05); /* subtle glow */
       }
 
+      /* Card hover effect */
+      .card:hover {
+        background-color: #222222; /* Slightly lighter dark grey */
+        border-left-color: #dddddd; /* Light grey border on hover */
+      }
+
+      /* Card heading */
+      .card h3 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: #ffffff; /* Pure white */
+        margin: 0;
+      }
+
+      /* ABOUT ME SECTION */
+      .about-me {
+        background-color: #000000; /* Pure black background */
+        padding: 4rem 1.5rem 0 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* About me main heading */
+      .about-me h3 {
+        font-size: 1.9rem;
+        margin-bottom: 1rem;
+        color: #ffffff; /* Pure white */
+        font-weight: 700;
+        letter-spacing: 1.5px;
+      }
+
+      /* About me subheading */
+      .about-me h2 {
+        font-size: 1.55rem;
+        margin-bottom: 1rem;
+        color: #cccccc; /* Light grey */
+        font-weight: 500;
+        padding-top: 1rem;
+      }
+
+      /* About me paragraph */
+      .about-me p {
+        font-size: 1.05rem;
+        color: #dddddd; /* Slightly lighter grey */
+        line-height: 1.7;
+        max-width: 1000px;
+        margin: 0 auto;
+        white-space: pre-wrap; /* Preserve line breaks */
+      }
+
+      /* SKILLS SECTION */
+      .skills {
+        background-color: #000000; /* Pure black background */
+        padding: 3rem 1.5rem 0 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* Skills main heading */
+      .skills h3 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: #ffffff; /* Pure white */
+        font-weight: 700;
+        letter-spacing: 1.5px;
+      }
+
+      /* Skills grid container */
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      /* Individual skill card */
+      .skill-card {
+        background-color: #111111; /* Very dark grey */
+        padding: 1rem 1.5rem;
+        color: #ffffff; /* Pure white */
+        border-radius: 8px;
+        border: 2px solid #444444; /* Dark grey border */
+        font-weight: 500;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.05); /* subtle glow */
+      }
+
+      /* Skill card hover effect */
+      .skill-card:hover {
+        background-color: #222222; /* Slightly lighter dark grey */
+        color: #ffffff; /* Pure white */
+        border-color: #dddddd; /* Light grey border */
+        transform: scale(1.05);
+      }
+
+      /* CONTACT INFO SECTION */
+      .contact-info {
+        background-color: #000000; /* Pure black background */
+        padding: 2rem 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+        color: #cccccc; /* Light grey */
+        font-size: 1.1rem;
+        border-top: 1px solid #999999; /* Medium grey border */
+      }
+
+      /* Contact main heading */
+      .contact-info h3 {
+        color: #ffffff; /* Pure white */
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 1rem;
+      }
+
+      /* Contact items container */
+      .contact-info .contact-items {
+        display: flex;
+        justify-content: center;
+        gap: 2rem; /* space between contact items */
+        flex-wrap: wrap;
+        font-size: 1.1rem;
+      }
+
+      /* Individual contact item */
+      .contact-info .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      /* Responsive Design */
+
+      /* For screens smaller than 900px - stack cards vertically */
       @media (max-width: 900px) {
         .cards-container {
           flex-direction: column;
           align-items: center;
+          padding: 1rem 0;
         }
 
         .card {
           width: 90%;
           text-align: center;
+          border-left: none;
+          border-top: 5px solid #999999; /* Medium grey top border */
         }
       }
 
+      /* For tablets and smaller screens */
       @media (max-width: 768px) {
         .profile-pic {
-          width: 120px;
-          height: 120px;
+          width: 200px;
+          height: 200px;
         }
 
         h1 {
-          font-size: 2rem;
+          font-size: 2.15rem;
         }
 
         .logo img {
-          height: 32px;
+          height: 40px;
+        }
+
+        .title {
+          font-size: 1.05rem;
+        }
+      }
+
+      /* For mobile screens smaller than 480px */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.75rem;
+        }
+
+        .about-me h3 {
+          font-size: 1.5rem;
+        }
+
+        .about-me h2 {
+          font-size: 1.25rem;
+        }
+
+        .about-me p {
+          font-size: 0.95rem;
+          padding: 0 1rem;
+        }
+
+        .skills h3 {
+          font-size: 1.5rem;
+        }
+
+        .skill-card {
+          font-size: 0.95rem;
+          padding: 0.8rem 1.2rem;
+        }
+
+        .contact-info .contact-items {
+          gap: 0rem; /* remove gap for small screen */
         }
       }
     </style>
@@ -109,23 +310,75 @@
     <main>
       <section class="intro">
         <img src="mm.png" alt="M" class="profile-pic" />
-        <h1>Mayur Kumar</h1>
+        <h1>MAYUR KUMAR</h1>
         <p class="title">
-          Assistant Manager (SDE 1) | AI Developer & Data Analyst
+          ASSISTANT MANAGER (SDE) | AI DEVELOPER & DATA ANALYST
         </p>
       </section>
 
       <section class="cards-container">
         <div class="card">
-          <h3>Game Development</h3>
+          <h3>AI DEVELOPMENT</h3>
         </div>
 
         <div class="card">
-          <h3>Website Development</h3>
+          <h3>DATA ANALYSIS</h3>
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Data Analysis</h3>
+      <section class="about-me">
+        <h3>ABOUT ME</h3>
+        <h2>
+          1.5 years of experience building AI projects and uncovering insights
+          from data.
+        </h2>
+        <p>
+Over the past year and a half, I’ve worked on a variety of AI-driven projects.
+I combine data analysis with AI development to turn interactive ideas into real-world solutions.
+I’m always exploring the latest advances in AI research, and I love pushing the boundaries of what’s possible.
+        </p>
+      </section>
+
+      <section class="skills">
+        <h3>SKILLS, TOOLS & PLATFORMS</h3>
+        <div class="skills-grid">
+          <!-- Skills -->
+          <div class="skill-card">Prompt Engineering</div>
+          <div class="skill-card">Generative AI</div>
+          <div class="skill-card">HTML & CSS</div>
+          <div class="skill-card">Quality Assurance</div>
+          <div class="skill-card">End-to-End Testing</div>
+          <div class="skill-card">Bug Tracking and Reporting</div>
+          <div class="skill-card">Data Analysis and Visualization</div>
+
+          <!-- Tools -->
+          <div class="skill-card">Office 365</div>
+          <div class="skill-card">MS Excel</div>
+          <div class="skill-card">Power BI</div>
+          <div class="skill-card">MS Teams</div>
+          <div class="skill-card">Outlook</div>
+          <div class="skill-card">Figma</div>
+          <div class="skill-card">AI Tools (e.g., ChatGPT)</div>
+          <div class="skill-card">Visual Studio Code</div>
+          <div class="skill-card">Android Studio</div>
+          <div class="skill-card">Azure DevOps</div>
+
+          <!-- Platforms -->
+          <div class="skill-card">Android</div>
+          <div class="skill-card">iOS</div>
+          <div class="skill-card">Web Browsers</div>
+          <div class="skill-card">Set-Top Boxes</div>
+          <div class="skill-card">Cloud Gaming Platforms</div>
+        </div>
+      </section>
+
+      <br /><br />
+
+      <section class="contact-info">
+        <h3>CONTACT</h3>
+        <div class="contact-items">
+          <div class="contact-item">Mobile: 7021654408</div>
+          <div class="contact-item">Email: mayurkumar.am@gmail.com</div>
         </div>
       </section>
     </main>
